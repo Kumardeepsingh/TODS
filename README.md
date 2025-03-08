@@ -26,6 +26,14 @@ Employee Login: Log in using employee credentials (cashier or driver).
 Order Process: Cashiers create or search for customer profiles, add items to the order, and complete the order.
 Delivery: Drivers can log in to view and confirm order deliveries.
 Order Modification: Customers can modify their orders before they are finalized.
+
+Authors:
+Gurkamal Bassi
+Sukhveer Sohi
+Prabhjot Saddi
+Balmohkam Singh
+Kumardeep Singh
+
 Screenshots:
 
 Employee Login:
