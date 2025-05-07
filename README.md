@@ -1,72 +1,100 @@
-Tiffin Order & Delivery System (TODS)
+# 🍱 Tiffin Order & Delivery System (TODS)
 
-Project Description:
-The Tiffin Order & Delivery System (TODS) is a POS system designed for managing food orders in schools. It allows employees to take orders over the phone and deliver them efficiently to school students. The system handles customer information, stores orders in a MySQL database, and helps schedule drivers for deliveries. The goal is to improve order processing, record keeping, and overall efficiency.
+**TODS** is a POS (Point-of-Sale) system designed for managing food orders in school environments. The system allows employees to take orders, manage deliveries, and store customer and order data securely in a MySQL database. It improves efficiency in order management, delivery scheduling, and record keeping.
 
-Features:
-Order Management: Employees can take orders from customers, store details like customer information, order items, and delivery addresses in the database.
-Driver Scheduling: The system helps management schedule drivers for deliveries to schools.
-Customer Information: It stores customer names, addresses, billing information, and preferences for recurring orders.
-Security: Ensures the security of customer data by restricting access to staff members with unique IDs and passwords.
-User-Friendly Interface: Designed for cashiers and drivers to easily manage orders and deliveries.
+---
 
-Technology Stack:
-Programming Language: Java (JavaFX)
-Database: MySQL
-Tools: Eclipse IDE, Scene Builder, MySQL Workbench, XAMPP
-Operating System: Windows 10
-Installation:
-Clone the repository from GitHub.
-Install Java and MySQL.
-Set up MySQL using the provided database schema.
-Run the JavaFX application using Eclipse or any compatible IDE.
+## 🚀 Features
 
-How to Use:
-Employee Login: Log in using employee credentials (cashier or driver).
-Order Process: Cashiers create or search for customer profiles, add items to the order, and complete the order.
-Delivery: Drivers can log in to view and confirm order deliveries.
-Order Modification: Customers can modify their orders before they are finalized.
+- 🧾 **Order Management**: Cashiers can create new orders or search and modify existing ones.
+- 🚚 **Driver Scheduling**: Assign and manage drivers for deliveries.
+- 👨‍👩‍👧‍👦 **Customer Profiles**: Store customer info, dependants, and recurring preferences.
+- 🔐 **Secure Access**: Only employees with valid credentials can log in.
+- 🖥️ **User-Friendly Interface**: Designed for easy use by cashiers and drivers.
 
-Authors:
-Gurkamal Bassi,
-Sukhveer Sohi,
-Prabhjot Saddi,
-Balmohkam Singh,
-Kumardeep Singh
+---
 
-Screenshots:
+## 🛠️ Technology Stack
 
-Employee Login:
+- **Language**: Java
+- **Framework**: JavaFX
+- **Database**: MySQL
+- **IDE**: Eclipse
+- **UI Builder**: Scene Builder
+- **Other Tools**: XAMPP, MySQL Workbench
+- **OS**: Windows 10
+
+---
+
+## ⚙️ Installation
+
+1. **Clone the Repository**
+```bash
+git clone https://github.com/YourUsername/TODS.git
+```
+
+2. **Install Dependencies**
+   - Java Development Kit (JDK 8+)
+   - Eclipse IDE
+   - MySQL Server
+   - Scene Builder
+
+3. **Set Up MySQL Database**
+   - Start MySQL server using XAMPP
+   - Open MySQL Workbench
+   - Run the provided SQL schema and raw data input (see below)
+
+4. **Run the JavaFX Project**
+   - Open in Eclipse
+   - Connect your MySQL database in the config/utility class
+   - Run using the main launcher class
+
+---
+
+## 👥 Authors
+
+- Gurkamal Bassi  
+- Sukhveer Sohi  
+- Prabhjot Saddi  
+- Balmohkam Singh  
+- Kumardeep Singh
+
+---
+
+## 🖼️ Screenshots
+
+**Employee Login**  
 ![image](https://github.com/user-attachments/assets/33ecd682-a6ed-4f51-95af-d003f7dae8c8)
-If Employee Forget Password:
+
+**Forgot Password**  
 ![image](https://github.com/user-attachments/assets/a2d81e5e-9260-42ab-b89b-f4257b38c85e)
-Type of  Customer :
-![image](https://github.com/user-attachments/assets/f82c8c15-3ab5-4e3d-962f-b71c5703452f)
-New Customer:
+
+**New Customer**  
 ![image](https://github.com/user-attachments/assets/acd5e780-dcfe-4e3c-aec7-5fa6cd8f13c6)
-New customer added to the customer table in the database:
+
+**Customer in DB**  
 ![image](https://github.com/user-attachments/assets/63f58f77-830d-49be-9e20-170fe28d7bda)
-New dependant added to the dependant table in the database:
+
+**Dependant in DB**  
 ![image](https://github.com/user-attachments/assets/0335e777-8c8a-4c59-a5a1-cd889cef4c89)
-Existing Customer:
+
+**Existing Customer**  
 ![image](https://github.com/user-attachments/assets/b690518f-8ea6-4214-84ab-c009e3754b41)
-![image](https://github.com/user-attachments/assets/fb0e225b-1537-4053-9c91-ae0eb64efb5b)
-![image](https://github.com/user-attachments/assets/eff19314-c187-4a28-826c-cca815384fa9)
-![image](https://github.com/user-attachments/assets/838d18f4-6c23-4e8d-a65c-b97e19827850)
-![image](https://github.com/user-attachments/assets/af000b6e-6561-4ef2-afa5-0c3f2fe59e3b)
-![image](https://github.com/user-attachments/assets/ac368f02-45b4-4e8d-93c2-8debd090b83d)
-Driver Confirm Pickup:
+
+**Driver Pickup Confirmation**  
 ![image](https://github.com/user-attachments/assets/df0e5595-8fda-4c94-8901-07b7f6e7706f)
 
-SQL Files
+---
 
-Database Structure:
+## 🗃️ SQL Schema
 
-
-Create DATABASE tods;
-
-Use tods;
-
+> The full SQL schema includes:
+- Customer, School, Dependant
+- Employee, EmployeeType
+- Product, ProductCategory
+- MyOrder, Order_Product
+  
+```sql
 CREATE TABLE Customer(
     CustomerID int(4) AUTO_INCREMENT NOT NULL,
     FirstName varchar(50),
@@ -160,10 +188,6 @@ CREATE TABLE Order_Product(
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
 );
 
-
-Raw Data Input:
-
-USE tods;
 
 INSERT INTO Customer(CustomerID, FirstName, LastName, PhoneNumber, Email, Address, City, Province, PostalCode)
 VALUES(1001,'Jhon','Wick',6045492812,'jhon.wick@gmail.com', '12339 72 Avenue', 'Surrey', 'BC', 'V3W1K6'),
@@ -273,12 +297,23 @@ VALUES                    (12345, 8892   , 15000     ,  2 ),
                            (12359, 8898   , 15021     ,  5),
                            (12360, 8898   , 15021     ,  2 ),
                            (12361, 8892   , 15025    ,  6 );
+```
 
+---
 
+## ✅ How to Use
 
+- **Login** as Cashier or Driver
+- **Take Orders**: Create or edit customer records, add items, and finalize orders
+- **Deliver Orders**: Drivers view and confirm assigned orders
+- **Modify Orders**: Customers may modify orders before they're finalized
 
+---
 
+## 📄 License
 
+This project is licensed under the [MIT License](LICENSE)
 
+---
 
-
+> “Simplifying school lunch logistics with smart, secure, and scalable software.”
